@@ -1,0 +1,47 @@
+body{
+    background-color: rgb(1, 1, 80);
+    text-align: center;
+}
+.clickPad{
+    padding: 0 25%;
+}
+.heading{
+    font-size: 4.5rem;
+    letter-spacing: 0.5rem;
+    margin: 35px auto 60px;
+    font-family: 'Press Start 2P', cursive;
+    font-weight: bolder;
+   color: #FEF2BF;
+}
+button{
+    width: 200px;
+    height: 200px;
+    border: 0.7rem solid black;
+    border-radius: 1.7rem;
+  cursor: pointer;
+  margin: 0 25px 50px;
+  
+}
+.pressed{
+    box-shadow:5px 5px #fff;
+    opacity: 0.5;
+}
+.endgame{
+    background-color: red;
+}
+.green{
+    background-color: green;
+}
+.red{
+    background-color: red;
+}
+.blue{
+    background-color: blue;
+}
+.yellow{
+    background-color: yellow;
+}
+
+#a{
+    background-color:purple;
+}
