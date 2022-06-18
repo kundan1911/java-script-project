@@ -1,22 +1,60 @@
+var count=document.querySelectorAll(".drum").length;
 
-var a=Math.random();
-var b=Math.random();
-a*=6;
-b*=6;
-a=Math.floor(a);
-b=Math.floor(b);
-a++;
-b++;
-
-if(a===b){
-document.querySelector(".heading").textContent="Draw!"
+for(let i=0;i<count;i++){
+    document.querySelectorAll(".drum")[i].addEventListener("click",function (){
+        var inle=this.innerHTML;
+      makeSound(inle);
+buttonAnimation(inle)
+    }
+    );
 }
-else if(a>b){
-    document.querySelector(".heading").innerHTML="<img src='/dicegame/images/flag.png' class='flag'> Player 1 Wins! "
-}
-else{
-    document.querySelector(".heading").innerHTML="Player 2 Wins! <img src='/dicegame/images/flag.png' class='flag'> "
-}  
 
-document.querySelector(".p1").setAttribute("src","/dicegame/images/"+a.toString()+".png ")
-document.querySelector(".p2").setAttribute("src","/dicegame/images/"+b.toString()+".png ")
+document.addEventListener("keypress",function(event){
+    makeSound(event.key);
+    buttonAnimation(event.key)
+           
+})
+
+
+function makeSound(key){
+    switch(key){
+                   case "w":
+                       var audio=new Audio("/DrumKit/sounds/tom-1.mp3");
+                        audio.play()
+                    break;
+                    case "a":
+                        var audio=new Audio("/DrumKit/sounds/tom-2.mp3");
+                         audio.play()
+                     break;
+                     case "s":
+                        var audio=new Audio("/DrumKit/sounds/tom-3.mp3");
+                         audio.play()
+                     break;
+                     case "d":
+                        var audio=new Audio("/DrumKit/sounds/tom-4.mp3");
+                         audio.play()
+                     break;
+                     case "j":
+                        var audio=new Audio("/DrumKit/sounds/snare.mp3");
+                         audio.play()
+                     break;
+                     case "k":
+                        var audio=new Audio("/DrumKit/sounds/crash.mp3");
+                         audio.play()
+                     break;
+                     case "l":
+                        var audio=new Audio("/DrumKit/sounds/kick-bass.mp3");
+                         audio.play()
+                     break;
+               }
+
+}
+
+function buttonAnimation(keypressed){
+    var a=document.querySelector("."+keypressed)
+    a.classList.add("pressed");
+    setTimeout(function(){
+        a.classList.remove("pressed")
+    },100);
+}
+
